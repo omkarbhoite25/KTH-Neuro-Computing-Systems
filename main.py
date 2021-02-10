@@ -1,3 +1,7 @@
+#    Name: Omkar Bhoite (Neuro Computing Systems)
+#    Email ID: omkarbhoite97@gmail.com
+###########################################################################################################################################
+
 from Servo_Control import *
 
 #ping()
