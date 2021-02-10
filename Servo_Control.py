@@ -81,6 +81,12 @@ def read_position():
         print("[ID:%03d]  PresPos:%03d" % (MOTOR_ID,  Current_position))
         return
 
+'''
+torque function
+    working: It is used to enable and disable the torque of the motor
+'''
+
+
 def torque(data):
     print(data)
     motor_torque_enable, motor_torque_enable_error = packetHandler.write1ByteTxRx(portHandler, MOTOR_ID, ADDRESS_MX_28_TORQUE_ENABLE, data)
@@ -91,6 +97,12 @@ def torque(data):
     else:
         print("Dynamixel has been successfully connected")
     return
+
+'''
+gui_torque_input function 
+    woring: To get the user input for enabling or disabling the torque for the motor, and then the value is passed to the torque() function to do so.
+'''
+
 
 def gui_torque_input():
     data = int(input('Enter 1 to enable and 0 to disable the torque: ',))
