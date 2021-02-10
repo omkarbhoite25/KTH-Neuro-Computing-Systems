@@ -1,3 +1,7 @@
+#    Name: Omkar Bhoite (Neuro Computing Systems)
+#    Email ID: omkarbhoite97@gmail.com
+###########################################################################################################################################
+
 import os
 from ControlMX28 import *
 from dynamixel_sdk import *             #Library provided by the Dynamixel.
