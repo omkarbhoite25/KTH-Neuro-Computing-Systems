@@ -18,13 +18,15 @@ ping function
 
 def ping():
     while 1:
+        time.sleep(1)
         motor_id, ping_result, ping_error = packetHandler.ping(portHandler, MOTOR_ID)
+        print('Ping',ping_result)
         if ping_result != COMM_SUCCESS:
-            print("%s" % packetHandler.getTxRxResult(ping_result))
+            print("%s ping_result" % packetHandler.getTxRxResult(ping_result))
         elif ping_error != 0:
-            print("%s" % packetHandler.getRxPacketError(ping_error))
+            print("%s ping_error" % packetHandler.getRxPacketError(ping_error))
         else:
-            print("[ID:%03d] Ping Succeeded. Dynamixel model number : %d" % (MOTOR_ID, motor_id))
+            print("[ID:%03d] Ping Succeeded. Dynamixel Motor ID : %d" % (MOTOR_ID, motor_id))
             return
 
 
@@ -109,7 +111,6 @@ def gui_torque_input():
     torque(data)
 
 ##############################################################################################################################################
-
 
 
 ##############################################################################################################################################
