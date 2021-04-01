@@ -1,0 +1,2 @@
+dynamixel_sdk:dynamixel_sdk_examples
+-DCATKIN_DEVEL_PREFIX=/home/omkar/DY/devel -DCMAKE_INSTALL_PREFIX=/home/omkar/DY/install -G Unix Makefiles

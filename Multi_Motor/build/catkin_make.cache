@@ -1,0 +1,2 @@
+dynamixel_sdk:dynamixel_sdk_examples
+-DCATKIN_DEVEL_PREFIX=/home/omkar/Multi_Motor/devel -DCMAKE_INSTALL_PREFIX=/home/omkar/Multi_Motor/install -G Unix Makefiles
