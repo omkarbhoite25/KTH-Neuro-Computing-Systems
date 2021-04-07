@@ -1,0 +1,8 @@
+prefix=/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/install
+
+Name: single_motor
+Description: Description of single_motor
+Version: 0.1.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs dynamixel_sdk

@@ -19,9 +19,9 @@ except ImportError:
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/omkar/Multi_Motor/devel/env.sh')
+code = generate_environment_script('/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/env.sh')
 
-output_filename = '/home/omkar/Multi_Motor/build/catkin_generated/setup_cached.sh'
+output_filename = '/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/build/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

@@ -6,7 +6,7 @@ from os import path as os_path
 from pkgutil import extend_path
 from sys import path as sys_path
 
-__extended_path = '/home/omkar/DY/src/dynamixel_sdk/src'.split(';')
+__extended_path = '/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/src/dynamixel_sdk/src'.split(';')
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

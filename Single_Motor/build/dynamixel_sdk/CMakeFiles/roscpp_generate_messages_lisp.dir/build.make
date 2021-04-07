@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/omkar/DY/src
+CMAKE_SOURCE_DIR = /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/omkar/DY/build
+CMAKE_BINARY_DIR = /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build
 
 # Utility rule file for roscpp_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/build: roscpp_generat
 .PHONY : dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 
 dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	cd /home/omkar/DY/build/dynamixel_sdk && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/dynamixel_sdk && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 
 dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/depend:
-	cd /home/omkar/DY/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/omkar/DY/src /home/omkar/DY/src/dynamixel_sdk /home/omkar/DY/build /home/omkar/DY/build/dynamixel_sdk /home/omkar/DY/build/dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/src /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/src/dynamixel_sdk /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/dynamixel_sdk /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : dynamixel_sdk/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
 

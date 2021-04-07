@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/omkar/Multi_Motor/devel/lib/libdynamixel_sdk.pdb"
-  "/home/omkar/Multi_Motor/devel/lib/libdynamixel_sdk.so"
+  "/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/libdynamixel_sdk.pdb"
+  "/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/libdynamixel_sdk.so"
   "CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_bulk_read.cpp.o"
   "CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_bulk_write.cpp.o"
   "CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_sync_read.cpp.o"

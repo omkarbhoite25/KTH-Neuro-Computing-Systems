@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/omkar/DY/src
+CMAKE_SOURCE_DIR = /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/omkar/DY/build
+CMAKE_BINARY_DIR = /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/omkar/DY/build/CMakeFiles /home/omkar/DY/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/CMakeFiles /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/omkar/DY/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -493,186 +493,186 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named read_write_node
+# Target rules for targets named run_single_motor_using_rostopics
 
 # Build rule for target.
-read_write_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 read_write_node
-.PHONY : read_write_node
+run_single_motor_using_rostopics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_single_motor_using_rostopics
+.PHONY : run_single_motor_using_rostopics
 
 # fast build rule for target.
-read_write_node/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/read_write_node.dir/build.make dynamixel_sdk_examples/CMakeFiles/read_write_node.dir/build
-.PHONY : read_write_node/fast
+run_single_motor_using_rostopics/fast:
+	$(MAKE) -f single_motor/CMakeFiles/run_single_motor_using_rostopics.dir/build.make single_motor/CMakeFiles/run_single_motor_using_rostopics.dir/build
+.PHONY : run_single_motor_using_rostopics/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_generate_messages
+# Target rules for targets named single_motor_generate_messages
 
 # Build rule for target.
-dynamixel_sdk_examples_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_generate_messages
-.PHONY : dynamixel_sdk_examples_generate_messages
+single_motor_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_generate_messages
+.PHONY : single_motor_generate_messages
 
 # fast build rule for target.
-dynamixel_sdk_examples_generate_messages/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages.dir/build
-.PHONY : dynamixel_sdk_examples_generate_messages/fast
+single_motor_generate_messages/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_generate_messages.dir/build.make single_motor/CMakeFiles/single_motor_generate_messages.dir/build
+.PHONY : single_motor_generate_messages/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_generate_messages_nodejs
+# Target rules for targets named single_motor_generate_messages_eus
 
 # Build rule for target.
-dynamixel_sdk_examples_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_generate_messages_nodejs
-.PHONY : dynamixel_sdk_examples_generate_messages_nodejs
+single_motor_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_generate_messages_eus
+.PHONY : single_motor_generate_messages_eus
 
 # fast build rule for target.
-dynamixel_sdk_examples_generate_messages_nodejs/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_nodejs.dir/build
-.PHONY : dynamixel_sdk_examples_generate_messages_nodejs/fast
+single_motor_generate_messages_eus/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_generate_messages_eus.dir/build.make single_motor/CMakeFiles/single_motor_generate_messages_eus.dir/build
+.PHONY : single_motor_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named _dynamixel_sdk_examples_generate_messages_check_deps_GetPosition
+# Target rules for targets named _single_motor_generate_messages_check_deps_Control
 
 # Build rule for target.
-_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _dynamixel_sdk_examples_generate_messages_check_deps_GetPosition
-.PHONY : _dynamixel_sdk_examples_generate_messages_check_deps_GetPosition
+_single_motor_generate_messages_check_deps_Control: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _single_motor_generate_messages_check_deps_Control
+.PHONY : _single_motor_generate_messages_check_deps_Control
 
 # fast build rule for target.
-_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition.dir/build.make dynamixel_sdk_examples/CMakeFiles/_dynamixel_sdk_examples_generate_messages_check_deps_GetPosition.dir/build
-.PHONY : _dynamixel_sdk_examples_generate_messages_check_deps_GetPosition/fast
+_single_motor_generate_messages_check_deps_Control/fast:
+	$(MAKE) -f single_motor/CMakeFiles/_single_motor_generate_messages_check_deps_Control.dir/build.make single_motor/CMakeFiles/_single_motor_generate_messages_check_deps_Control.dir/build
+.PHONY : _single_motor_generate_messages_check_deps_Control/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_gennodejs
+# Target rules for targets named single_motor_generate_messages_lisp
 
 # Build rule for target.
-dynamixel_sdk_examples_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_gennodejs
-.PHONY : dynamixel_sdk_examples_gennodejs
+single_motor_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_generate_messages_lisp
+.PHONY : single_motor_generate_messages_lisp
 
 # fast build rule for target.
-dynamixel_sdk_examples_gennodejs/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_gennodejs.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_gennodejs.dir/build
-.PHONY : dynamixel_sdk_examples_gennodejs/fast
+single_motor_generate_messages_lisp/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_generate_messages_lisp.dir/build.make single_motor/CMakeFiles/single_motor_generate_messages_lisp.dir/build
+.PHONY : single_motor_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_generate_messages_cpp
+# Target rules for targets named single_motor_generate_messages_nodejs
 
 # Build rule for target.
-dynamixel_sdk_examples_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_generate_messages_cpp
-.PHONY : dynamixel_sdk_examples_generate_messages_cpp
+single_motor_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_generate_messages_nodejs
+.PHONY : single_motor_generate_messages_nodejs
 
 # fast build rule for target.
-dynamixel_sdk_examples_generate_messages_cpp/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_cpp.dir/build
-.PHONY : dynamixel_sdk_examples_generate_messages_cpp/fast
+single_motor_generate_messages_nodejs/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_generate_messages_nodejs.dir/build.make single_motor/CMakeFiles/single_motor_generate_messages_nodejs.dir/build
+.PHONY : single_motor_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_gencpp
+# Target rules for targets named _single_motor_generate_messages_check_deps_GetPosition
 
 # Build rule for target.
-dynamixel_sdk_examples_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_gencpp
-.PHONY : dynamixel_sdk_examples_gencpp
+_single_motor_generate_messages_check_deps_GetPosition: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _single_motor_generate_messages_check_deps_GetPosition
+.PHONY : _single_motor_generate_messages_check_deps_GetPosition
 
 # fast build rule for target.
-dynamixel_sdk_examples_gencpp/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_gencpp.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_gencpp.dir/build
-.PHONY : dynamixel_sdk_examples_gencpp/fast
+_single_motor_generate_messages_check_deps_GetPosition/fast:
+	$(MAKE) -f single_motor/CMakeFiles/_single_motor_generate_messages_check_deps_GetPosition.dir/build.make single_motor/CMakeFiles/_single_motor_generate_messages_check_deps_GetPosition.dir/build
+.PHONY : _single_motor_generate_messages_check_deps_GetPosition/fast
 
 #=============================================================================
-# Target rules for targets named _dynamixel_sdk_examples_generate_messages_check_deps_SetPosition
+# Target rules for targets named single_motor_generate_messages_cpp
 
 # Build rule for target.
-_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _dynamixel_sdk_examples_generate_messages_check_deps_SetPosition
-.PHONY : _dynamixel_sdk_examples_generate_messages_check_deps_SetPosition
+single_motor_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_generate_messages_cpp
+.PHONY : single_motor_generate_messages_cpp
 
 # fast build rule for target.
-_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition.dir/build.make dynamixel_sdk_examples/CMakeFiles/_dynamixel_sdk_examples_generate_messages_check_deps_SetPosition.dir/build
-.PHONY : _dynamixel_sdk_examples_generate_messages_check_deps_SetPosition/fast
+single_motor_generate_messages_cpp/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_generate_messages_cpp.dir/build.make single_motor/CMakeFiles/single_motor_generate_messages_cpp.dir/build
+.PHONY : single_motor_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_genpy
+# Target rules for targets named single_motor_gencpp
 
 # Build rule for target.
-dynamixel_sdk_examples_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_genpy
-.PHONY : dynamixel_sdk_examples_genpy
+single_motor_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_gencpp
+.PHONY : single_motor_gencpp
 
 # fast build rule for target.
-dynamixel_sdk_examples_genpy/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_genpy.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_genpy.dir/build
-.PHONY : dynamixel_sdk_examples_genpy/fast
+single_motor_gencpp/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_gencpp.dir/build.make single_motor/CMakeFiles/single_motor_gencpp.dir/build
+.PHONY : single_motor_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_generate_messages_eus
+# Target rules for targets named single_motor_geneus
 
 # Build rule for target.
-dynamixel_sdk_examples_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_generate_messages_eus
-.PHONY : dynamixel_sdk_examples_generate_messages_eus
+single_motor_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_geneus
+.PHONY : single_motor_geneus
 
 # fast build rule for target.
-dynamixel_sdk_examples_generate_messages_eus/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_eus.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_eus.dir/build
-.PHONY : dynamixel_sdk_examples_generate_messages_eus/fast
+single_motor_geneus/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_geneus.dir/build.make single_motor/CMakeFiles/single_motor_geneus.dir/build
+.PHONY : single_motor_geneus/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_generate_messages_lisp
+# Target rules for targets named single_motor_genpy
 
 # Build rule for target.
-dynamixel_sdk_examples_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_generate_messages_lisp
-.PHONY : dynamixel_sdk_examples_generate_messages_lisp
+single_motor_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_genpy
+.PHONY : single_motor_genpy
 
 # fast build rule for target.
-dynamixel_sdk_examples_generate_messages_lisp/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_lisp.dir/build
-.PHONY : dynamixel_sdk_examples_generate_messages_lisp/fast
+single_motor_genpy/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_genpy.dir/build.make single_motor/CMakeFiles/single_motor_genpy.dir/build
+.PHONY : single_motor_genpy/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_generate_messages_py
+# Target rules for targets named single_motor_genlisp
 
 # Build rule for target.
-dynamixel_sdk_examples_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_generate_messages_py
-.PHONY : dynamixel_sdk_examples_generate_messages_py
+single_motor_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_genlisp
+.PHONY : single_motor_genlisp
 
 # fast build rule for target.
-dynamixel_sdk_examples_generate_messages_py/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_py.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_generate_messages_py.dir/build
-.PHONY : dynamixel_sdk_examples_generate_messages_py/fast
+single_motor_genlisp/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_genlisp.dir/build.make single_motor/CMakeFiles/single_motor_genlisp.dir/build
+.PHONY : single_motor_genlisp/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_geneus
+# Target rules for targets named single_motor_gennodejs
 
 # Build rule for target.
-dynamixel_sdk_examples_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_geneus
-.PHONY : dynamixel_sdk_examples_geneus
+single_motor_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_gennodejs
+.PHONY : single_motor_gennodejs
 
 # fast build rule for target.
-dynamixel_sdk_examples_geneus/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_geneus.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_geneus.dir/build
-.PHONY : dynamixel_sdk_examples_geneus/fast
+single_motor_gennodejs/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_gennodejs.dir/build.make single_motor/CMakeFiles/single_motor_gennodejs.dir/build
+.PHONY : single_motor_gennodejs/fast
 
 #=============================================================================
-# Target rules for targets named dynamixel_sdk_examples_genlisp
+# Target rules for targets named single_motor_generate_messages_py
 
 # Build rule for target.
-dynamixel_sdk_examples_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamixel_sdk_examples_genlisp
-.PHONY : dynamixel_sdk_examples_genlisp
+single_motor_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_motor_generate_messages_py
+.PHONY : single_motor_generate_messages_py
 
 # fast build rule for target.
-dynamixel_sdk_examples_genlisp/fast:
-	$(MAKE) -f dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_genlisp.dir/build.make dynamixel_sdk_examples/CMakeFiles/dynamixel_sdk_examples_genlisp.dir/build
-.PHONY : dynamixel_sdk_examples_genlisp/fast
+single_motor_generate_messages_py/fast:
+	$(MAKE) -f single_motor/CMakeFiles/single_motor_generate_messages_py.dir/build.make single_motor/CMakeFiles/single_motor_generate_messages_py.dir/build
+.PHONY : single_motor_generate_messages_py/fast
 
 # Help Target
 help:
@@ -712,20 +712,20 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... read_write_node"
-	@echo "... dynamixel_sdk_examples_generate_messages"
-	@echo "... dynamixel_sdk_examples_generate_messages_nodejs"
-	@echo "... _dynamixel_sdk_examples_generate_messages_check_deps_GetPosition"
-	@echo "... dynamixel_sdk_examples_gennodejs"
-	@echo "... dynamixel_sdk_examples_generate_messages_cpp"
-	@echo "... dynamixel_sdk_examples_gencpp"
-	@echo "... _dynamixel_sdk_examples_generate_messages_check_deps_SetPosition"
-	@echo "... dynamixel_sdk_examples_genpy"
-	@echo "... dynamixel_sdk_examples_generate_messages_eus"
-	@echo "... dynamixel_sdk_examples_generate_messages_lisp"
-	@echo "... dynamixel_sdk_examples_generate_messages_py"
-	@echo "... dynamixel_sdk_examples_geneus"
-	@echo "... dynamixel_sdk_examples_genlisp"
+	@echo "... run_single_motor_using_rostopics"
+	@echo "... single_motor_generate_messages"
+	@echo "... single_motor_generate_messages_eus"
+	@echo "... _single_motor_generate_messages_check_deps_Control"
+	@echo "... single_motor_generate_messages_lisp"
+	@echo "... single_motor_generate_messages_nodejs"
+	@echo "... _single_motor_generate_messages_check_deps_GetPosition"
+	@echo "... single_motor_generate_messages_cpp"
+	@echo "... single_motor_gencpp"
+	@echo "... single_motor_geneus"
+	@echo "... single_motor_genpy"
+	@echo "... single_motor_genlisp"
+	@echo "... single_motor_gennodejs"
+	@echo "... single_motor_generate_messages_py"
 .PHONY : help
 
 

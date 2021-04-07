@@ -1,4 +1,4 @@
-prefix=/home/omkar/DY/install
+prefix=/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/install
 
 Name: dynamixel_sdk
 Description: Description of dynamixel_sdk
