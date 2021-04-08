@@ -1,4 +1,0 @@
-git rm --cached .vscode/
-git rm --cached build/
-git rm --cached devel/
-git rm --cached .catkin_workspace/
