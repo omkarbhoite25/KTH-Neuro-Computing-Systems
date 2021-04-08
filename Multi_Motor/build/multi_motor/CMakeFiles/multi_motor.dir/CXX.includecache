@@ -141,6 +141,8 @@ multi_motor/Control.h
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/multi_motor/src/multi_motor/Control.h
 dynamixel_sdk/dynamixel_sdk.h
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/multi_motor/src/dynamixel_sdk/dynamixel_sdk.h
+cmath
+-
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

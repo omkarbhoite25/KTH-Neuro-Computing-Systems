@@ -50,7 +50,7 @@ bool getPresentPosition (single_motor::GetPosition::Request &req,
   dxl_comm_result = packetHandler->read2ByteTxRx(portHandler, (uint8_t)req.id, ADDR_PRESENT_POSITION, &pos, &dxl_error);
   ROS_INFO("getPosition : [ID:%d] -> [POSITION:%d]", req.id, pos);
 
-  res.position = pos;
+  res.position = pos*0.088;
   return true;
 }
 
@@ -62,6 +62,7 @@ void setPositionCallback (const single_motor::Control::ConstPtr &msg)
   uint8_t dxl_error = 0;
   
   uint16_t pos = (unsigned int)msg->position;
+  pos = round(pos/0.088);
 
   packetHandler->write2ByteTxRx(portHandler, (uint8_t)msg->id, ADDR_GOAL_POSITION, pos, &dxl_error);
   ROS_INFO("setPosition : [ID:%d] [POSITION:%d]", msg->id, msg->position);
@@ -88,13 +89,10 @@ void movingSpeed (const single_motor::Control::ConstPtr &msg)
   ROS_INFO("Speed");
   uint8_t dxl_error = 0;
   uint16_t sp = (unsigned int)msg->speed;
+  sp = sp*0.114;
   packetHandler->write2ByteTxRx(portHandler, (uint8_t)msg->id, ADDR_MOVING_SPEED, sp, &dxl_error);
   ROS_INFO("New Speed");
 }
-
-
-
-
 
 
 int main(int argc, char **argv)
