@@ -7,7 +7,7 @@
 $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 ```
 ###### 2. Clone this repository.
-###### 3. Open the file named multi_motor.cpp and provide the path to the dynamixel library installed on you computer. The path maybe similar to like one i use but your distro might be different.
+###### 3. Open the file named multi_motor.cpp in Multi_Motor and provide the path to the dynamixel library installed on you computer. The path maybe similar to like one I use but your distro might be different. (Look for #include </opt/ros/noetic/include/dynamixel_sdk/dynamixel_sdk.h> and update it with your path)
 
 ###### Path on my computer
 ```
@@ -18,7 +18,7 @@ $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 /opt/ros/{$ros_distro}/include/dynamixel_sdk
 ```
 
-###### Also, make sure to check for the USB port and add the following in to the .cpp file. You can check to which port you are connected to using following command. 
+###### Also, make sure to check for the USB port and add the following in to the .cpp file. You can check to which port you are connected to using following command. (Look for #define DEVICE_NAME           "/dev/ttyACM0" and change  the port as per your port name, it maybe USB* or ACM*)
 ```
 $ ls /dev/tty*
 ```
