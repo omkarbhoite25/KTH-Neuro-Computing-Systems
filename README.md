@@ -2,7 +2,7 @@
 
 #### Steps to run the robotics head using ros topics and services.
 
-###### 1. Downlaod the Dynamixel SDK from https://github.com/ROBOTIS-GIT/DynamixelSDK.git and install the one for ros version. Or the shortest way is to install using the following command. Make sure to put the correct ROS-DISTRO.
+###### 1. Downlaod the Dynamixel SDK from https://github.com/ROBOTIS-GIT/DynamixelSDK.git and install the one for ros version. Or the shortest way to install library is by using the following command. (Make sure to put the correct ROS-DISTRO.)
 ```
 $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 ```
