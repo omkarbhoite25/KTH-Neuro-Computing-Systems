@@ -131,7 +131,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/gtest/cmake_install.cmake")
-  include("/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/dynamixel_sdk/cmake_install.cmake")
   include("/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/build/single_motor/cmake_install.cmake")
 
 endif()

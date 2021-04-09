@@ -79,7 +79,7 @@ multi_motor_EXTERNAL_OBJECTS =
 
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: multi_motor/CMakeFiles/multi_motor.dir/src/multi_motor.cpp.o
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: multi_motor/CMakeFiles/multi_motor.dir/build.make
-/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/libdynamixel_sdk.so
+/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: /opt/ros/noetic/lib/libdynamixel_sdk.so
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: /opt/ros/noetic/lib/libroscpp.so
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/lib/multi_motor/multi_motor: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0

@@ -1,2 +1,2 @@
-dynamixel_sdk:multi_motor
+multi_motor
 -DCATKIN_DEVEL_PREFIX=/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel -DCMAKE_INSTALL_PREFIX=/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/install -G Unix Makefiles

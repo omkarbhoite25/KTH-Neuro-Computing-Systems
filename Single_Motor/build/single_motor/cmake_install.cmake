@@ -104,7 +104,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/single_motor/run_single_motor_using_rostopics")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/single_motor/run_single_motor_using_rostopics"
-         OLD_RPATH "/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib:/opt/ros/noetic/lib:"
+         OLD_RPATH "/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/single_motor/run_single_motor_using_rostopics")

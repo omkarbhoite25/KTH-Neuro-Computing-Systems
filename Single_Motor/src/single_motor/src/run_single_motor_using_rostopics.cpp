@@ -17,7 +17,7 @@
 #include "std_msgs/String.h"
 #include "single_motor/GetPosition.h"
 #include "single_motor/Control.h"
-#include "dynamixel_sdk/dynamixel_sdk.h"
+#include </opt/ros/noetic/include/dynamixel_sdk/dynamixel_sdk.h>
 
 using namespace dynamixel;
 

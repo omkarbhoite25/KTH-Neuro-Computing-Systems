@@ -20,7 +20,7 @@
 #include "std_msgs/String.h"
 #include "multi_motor/GetPosition.h"
 #include "multi_motor/Control.h"
-#include "dynamixel_sdk/dynamixel_sdk.h"
+#include </opt/ros/noetic/include/dynamixel_sdk/dynamixel_sdk.h>
 #include<cmath>
 using namespace dynamixel;
 
@@ -73,7 +73,6 @@ void talkToMotor(int id, const multi_motor::Control::ConstPtr &msg)
   packetHandler->write2ByteTxRx(portHandler, id, ADDR_GOAL_POSITION, pos, &dxl_error);
 }
 
-// Function for the movement of base motor (head_lr)
 void setPositionCallback1(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = (unsigned int)msg->position;

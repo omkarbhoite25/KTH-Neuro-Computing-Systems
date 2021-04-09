@@ -79,7 +79,7 @@ run_single_motor_using_rostopics_EXTERNAL_OBJECTS =
 
 /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: single_motor/CMakeFiles/run_single_motor_using_rostopics.dir/src/run_single_motor_using_rostopics.cpp.o
 /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: single_motor/CMakeFiles/run_single_motor_using_rostopics.dir/build.make
-/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/libdynamixel_sdk.so
+/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: /opt/ros/noetic/lib/libdynamixel_sdk.so
 /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: /opt/ros/noetic/lib/libroscpp.so
 /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/lib/single_motor/run_single_motor_using_rostopics: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0

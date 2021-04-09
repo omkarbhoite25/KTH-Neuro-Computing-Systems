@@ -1,2 +1,2 @@
-dynamixel_sdk:single_motor
+single_motor
 -DCATKIN_DEVEL_PREFIX=/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel -DCMAKE_INSTALL_PREFIX=/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/install -G Unix Makefiles

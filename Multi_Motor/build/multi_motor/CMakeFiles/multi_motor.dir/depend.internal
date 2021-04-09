@@ -6,14 +6,14 @@ multi_motor/CMakeFiles/multi_motor.dir/src/multi_motor.cpp.o
  /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/include/multi_motor/GetPosition.h
  /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/include/multi_motor/GetPositionRequest.h
  /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/include/multi_motor/GetPositionResponse.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/dynamixel_sdk.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/group_bulk_read.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/group_bulk_write.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/group_sync_read.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/group_sync_write.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/packet_handler.h
- /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include/dynamixel_sdk/port_handler.h
  /home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/multi_motor/src/multi_motor.cpp
+ /opt/ros/noetic/include/dynamixel_sdk/dynamixel_sdk.h
+ /opt/ros/noetic/include/dynamixel_sdk/group_bulk_read.h
+ /opt/ros/noetic/include/dynamixel_sdk/group_bulk_write.h
+ /opt/ros/noetic/include/dynamixel_sdk/group_sync_read.h
+ /opt/ros/noetic/include/dynamixel_sdk/group_sync_write.h
+ /opt/ros/noetic/include/dynamixel_sdk/packet_handler.h
+ /opt/ros/noetic/include/dynamixel_sdk/port_handler.h
  /opt/ros/noetic/include/ros/advertise_options.h
  /opt/ros/noetic/include/ros/advertise_service_options.h
  /opt/ros/noetic/include/ros/assert.h

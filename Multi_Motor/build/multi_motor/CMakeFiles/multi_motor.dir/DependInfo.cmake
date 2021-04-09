@@ -18,14 +18,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/devel/include"
-  "/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/src/dynamixel_sdk/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/omkar/KTH-Neuro-Computing-Systems/Multi_Motor/build/dynamixel_sdk/CMakeFiles/dynamixel_sdk.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
