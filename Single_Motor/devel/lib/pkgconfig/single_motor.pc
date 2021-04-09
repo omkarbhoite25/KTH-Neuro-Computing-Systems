@@ -1,8 +1,0 @@
-prefix=/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel
-
-Name: single_motor
-Description: Description of single_motor
-Version: 0.1.0
-Cflags: -I/home/omkar/KTH-Neuro-Computing-Systems/Single_Motor/devel/include
-Libs: -L${prefix}/lib 
-Requires: roscpp std_msgs dynamixel_sdk
