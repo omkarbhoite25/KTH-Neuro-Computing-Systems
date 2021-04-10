@@ -1,4 +1,4 @@
-# KTH-Neuro-Computing-Systems
+# KTH-Neuro-Computing-Systems (Project: Robotic Head)
 
 #### Steps to run the robotics head using ros topics and services.
 
