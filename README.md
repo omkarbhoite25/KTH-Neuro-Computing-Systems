@@ -57,3 +57,18 @@ $ rosrun multi_motor multi_motor
 $ source devel/setup.bash
 $ python3 src/multi_motor/src/run.py
 ```
+
+###### Note: You can also eliminate retyping the "$ source devel/setup.bash" command, by adding it in the .bashrc file. To do so you need to follow the commands
+###### Open the .bashrc file. Since, I'm using vscode I will follow the following command
+
+```
+$ code ~/.bashrc
+```
+
+###### and paste the following command at the bottom of the file 
+
+```
+source ~/KTH-Neuro-Computing-Systems/Multi_Motor/devel/setup.bash
+```
+###### Once, it is done you need to restart the terminal, and follow the procedure to run the scripts.
+
