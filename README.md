@@ -57,7 +57,7 @@ $ rosrun multi_motor multi_motor
 $ source devel/setup.bash
 $ python3 src/multi_motor/src/run.py
 ```
-
+# #########################################################################################################################################################################################
 ###### Note: You can also eliminate retyping the "$ source devel/setup.bash" command, by adding it in the .bashrc file. To do so you need to follow the commands
 ###### Open the .bashrc file. Since, I'm using vscode I will follow the following command
 
