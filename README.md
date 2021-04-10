@@ -22,6 +22,13 @@ $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 ```
 $ ls /dev/tty*
 ```
+###### Now we need to make sure that we have access to the port and for that we need to give the port acccess to read and write, and to achieve that us the following command. Where the asterick in " /dev/tty* " corresponds to USB or ACM which you can verify using the above command. 
+
+```
+$ sudo chmod a+rw /dev/tty*
+```
+
+
 ###### 4. Perform the following command to build the files for the robotic head
 
 ```
