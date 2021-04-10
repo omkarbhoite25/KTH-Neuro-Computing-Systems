@@ -2,6 +2,10 @@
 * Project by: Omkar Vilas Bhoite
 * Advised and Guided by: Prof. Jorg Conradt & Juan Pablo Romero Bermudez
 
+# #########################################################################################################################################################################################
+
+# #########################################################################################################################################################################################
+
 #### Steps to run the robotics head using ros topics and services.
 
 ###### [1]. Downlaod the Dynamixel SDK from https://github.com/ROBOTIS-GIT/DynamixelSDK.git and install the one for ros version. Or the shortest way to install library is by using the following command. (Make sure to put the correct ROS-DISTRO.)
@@ -58,6 +62,10 @@ $ source devel/setup.bash
 $ python3 src/multi_motor/src/run.py
 ```
 # #########################################################################################################################################################################################
+
+# #########################################################################################################################################################################################
+
+
 ###### Note: You can also eliminate retyping the "$ source devel/setup.bash" command, by adding it in the .bashrc file. To do so you need to follow the commands
 ###### Open the .bashrc file. Since, I'm using vscode I will follow the following command
 
