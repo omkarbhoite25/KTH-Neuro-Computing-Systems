@@ -1,6 +1,6 @@
 # KTH-Neuro-Computing-Systems (Project: Robotic Head)
-#### By: Omkar Bhoite
-#### Advised and Guided by: Prof. Jorg Conradt & Juan Pablo Romero Bermudez
+* Project by: Omkar Vilas Bhoite
+* Advised and Guided by: Prof. Jorg Conradt & Juan Pablo Romero Bermudez
 
 #### Steps to run the robotics head using ros topics and services.
 
