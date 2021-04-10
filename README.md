@@ -2,12 +2,12 @@
 
 #### Steps to run the robotics head using ros topics and services.
 
-###### 1. Downlaod the Dynamixel SDK from https://github.com/ROBOTIS-GIT/DynamixelSDK.git and install the one for ros version. Or the shortest way to install library is by using the following command. (Make sure to put the correct ROS-DISTRO.)
+###### [1]. Downlaod the Dynamixel SDK from https://github.com/ROBOTIS-GIT/DynamixelSDK.git and install the one for ros version. Or the shortest way to install library is by using the following command. (Make sure to put the correct ROS-DISTRO.)
 ```
 $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 ```
-###### 2. Clone this repository.
-###### 3. Open the file named multi_motor.cpp in Multi_Motor and provide the path to the dynamixel library installed on you computer. The path maybe similar to like one I use but your distro might be different. (Look for #include </opt/ros/noetic/include/dynamixel_sdk/dynamixel_sdk.h> and update it with your path)
+###### [2]. Clone this repository.
+###### [3]. Open the file named multi_motor.cpp in Multi_Motor and provide the path to the dynamixel library installed on you computer. The path maybe similar to like one I use but your distro might be different. (Look for #include </opt/ros/noetic/include/dynamixel_sdk/dynamixel_sdk.h> and update it with your path)
 
 ###### Path on my computer
 ```
@@ -29,7 +29,7 @@ $ sudo chmod a+rw /dev/tty*
 ```
 
 
-###### 4. Perform the following command to build the files for the robotic head
+###### [4]. Perform the following command to build the files for the robotic head
 
 ```
 $ cd Multi_Motor/
@@ -37,19 +37,19 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 
-###### 5. Open 3 new terminals. (Make sure that you are in the same folder where you performed the step 3)
-###### 6. In first terminal execute the following command 
+###### [5]. Open 3 new terminals. (Make sure that you are in the same folder where you performed the step 3)
+###### [6]. In first terminal execute the following command 
 
 ```
 $ source devel/setup.bash
 $ roscore
 ```
-###### 7. In the second termianl execute the following command 
+###### [7]. In the second termianl execute the following command 
 ```
 $ source devel/setup.bash
 $ rosrun multi_motor multi_motor
 ```
-###### 8. In the third termianl execute the following command
+###### [8]. In the third termianl execute the following command
 
 ```
 $ source devel/setup.bash
