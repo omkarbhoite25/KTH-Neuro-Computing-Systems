@@ -9,8 +9,8 @@
  * Open terminal #2
  * $ rosrun multi_motor multi_motor
  * 
- * Open terminal #3 (run one of below commands at a time)
- * $ rostopic pub -1 /{rostopic name} multi_motor/Control "{id: 1, position: 0}"
+ * Open terminal #3 (run one of below commands at a time to explore how the motors in the robot head can be controlled)
+ * $ rostopic pub -1 /{rostopic name} multi_motor/Control "{position: 0}"
  * $ rosservice call /get_position "id: 1"
 
 *******************************************************************************/
@@ -30,7 +30,7 @@ using namespace dynamixel;
 #define ADDR_PRESENT_POSITION 36
 #define ADDR_LED              25
 #define ADDR_MOVING_SPEED     32
-#define ADDR_TOQUE            34  
+#define ADDR_TORQUE            34  
 
 // Protocol version
 #define PROTOCOL_VERSION      1.0             // Default Protocol version of DYNAMIXEL X series.
@@ -240,7 +240,7 @@ void movingSpeed (const multi_motor::Control::ConstPtr &msg)
   uint8_t dxl_error = 0;
   uint16_t sp = (unsigned int)msg->speed;
   packetHandler->write2ByteTxRx(portHandler, (uint8_t)msg->id, ADDR_MOVING_SPEED, sp, &dxl_error);
-  ROS_INFO("New speed set");
+  ROS_INFO("New speed set for motor %d", (uint8_t)msg->id); 
 }
 
 
@@ -250,8 +250,50 @@ void setTorque (const multi_motor::Control::ConstPtr &msg)
   ROS_INFO("Setting new torque");
   uint8_t dxl_error = 0;
   uint16_t tor = (unsigned int)msg->torque;
-  packetHandler->write2ByteTxRx(portHandler, (uint8_t)msg->id, ADDR_TOQUE, tor, &dxl_error);
-  ROS_INFO("New torque set");
+  packetHandler->write2ByteTxRx(portHandler, (uint8_t)msg->id, ADDR_TORQUE, tor, &dxl_error);
+  ROS_INFO("New torque set for motor %d",(uint8_t)msg->id );
+}
+
+// A function to communicate with motor
+void communiateWithMotor(int id, int add, int value)
+{
+  uint8_t dxl_error = 0;
+  packetHandler = dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION);
+  packetHandler->write2ByteTxRx(portHandler, id, add, value, &dxl_error);
+}
+
+// To make sure that the robot head is set to the default position as per its structure.
+
+void settingHeadToDefaultPosition()
+{
+  
+  // Lower the speed of motors to take safety into account
+  communiateWithMotor(DXL1_ID,ADDR_MOVING_SPEED,50);
+  communiateWithMotor(DXL2_ID,ADDR_MOVING_SPEED,50);
+  communiateWithMotor(DXL3_ID,ADDR_MOVING_SPEED,50);
+  communiateWithMotor(DXL4_ID,ADDR_MOVING_SPEED,50);
+  communiateWithMotor(DXL5_ID,ADDR_MOVING_SPEED,50);
+  communiateWithMotor(DXL6_ID,ADDR_MOVING_SPEED,50);
+
+  // Moving the motors to default positions
+  communiateWithMotor(DXL1_ID,ADDR_GOAL_POSITION,2000);
+  communiateWithMotor(DXL2_ID,ADDR_GOAL_POSITION,2450);
+  communiateWithMotor(DXL3_ID,ADDR_GOAL_POSITION,2000);
+  communiateWithMotor(DXL4_ID,ADDR_GOAL_POSITION,2000);
+  communiateWithMotor(DXL5_ID,ADDR_GOAL_POSITION,2000);
+  communiateWithMotor(DXL6_ID,ADDR_GOAL_POSITION,2000);
+}
+
+
+// Function is use to enable torque for all the motors in the robotic head
+void enableTorque()
+{
+  communiateWithMotor(DXL1_ID,ADDR_TORQUE_ENABLE,1);
+  communiateWithMotor(DXL2_ID,ADDR_TORQUE_ENABLE,1);
+  communiateWithMotor(DXL3_ID,ADDR_TORQUE_ENABLE,1);
+  communiateWithMotor(DXL4_ID,ADDR_TORQUE_ENABLE,1);
+  communiateWithMotor(DXL5_ID,ADDR_TORQUE_ENABLE,1);
+  communiateWithMotor(DXL6_ID,ADDR_TORQUE_ENABLE,1);
 }
 
 // Main Function
@@ -272,33 +314,12 @@ int main(int argc, char **argv)
   {
     ROS_ERROR("Failed to set the baudrate!");
   }
+  //Setting head to default position
+  settingHeadToDefaultPosition();
+
   // To Enable torque
-  packetHandler->write2ByteTxRx(portHandler, DXL1_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL2_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL3_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL4_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL5_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL6_ID, ADDR_TORQUE_ENABLE, 1, &dxl_error);
-
-  // To make sure that the robot head is set to the default position as per its structure.
-
-  // Lower the speed of motors to take safety into account
-  packetHandler->write2ByteTxRx(portHandler, DXL1_ID, ADDR_MOVING_SPEED, 50, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL2_ID, ADDR_MOVING_SPEED, 50, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL3_ID, ADDR_MOVING_SPEED, 50, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL4_ID, ADDR_MOVING_SPEED, 50, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL5_ID, ADDR_MOVING_SPEED, 50, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL6_ID, ADDR_MOVING_SPEED, 50, &dxl_error);
-
-  // Moving the motors to default positions
-  packetHandler->write2ByteTxRx(portHandler, DXL1_ID, ADDR_GOAL_POSITION, 2000, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL2_ID, ADDR_GOAL_POSITION, 2450, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL3_ID, ADDR_GOAL_POSITION, 2000, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL4_ID, ADDR_GOAL_POSITION, 2000, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL5_ID, ADDR_GOAL_POSITION, 2000, &dxl_error);
-  packetHandler->write2ByteTxRx(portHandler, DXL6_ID, ADDR_GOAL_POSITION, 2000, &dxl_error);
+  enableTorque();
  
-
 // Create rostopics
   ros::Subscriber set_position1_sub = nh.subscribe("/head_lr", 10, setPositionCallback1);
   ros::Subscriber set_position2_sub = nh.subscribe("/head_ud", 10, setPositionCallback2);
