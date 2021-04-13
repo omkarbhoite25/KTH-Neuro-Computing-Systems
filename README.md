@@ -28,6 +28,12 @@ $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 ```
 $ ls /dev/tty*
 ```
+
+###### You can check if the user is in the dialout group using the following command (Where "username" is what you have to change as per the user)
+```
+$ id username
+```
+
 ###### If serial port is not opening then there is chance that the user is not added to the dialout group, and to add user to dialout group use the following command (this is optional, just in case you are not able to open the port)
 
 ```
