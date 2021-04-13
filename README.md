@@ -28,6 +28,12 @@ $ sudo apt-get install ros-{$ros_distro}-dynamixel-sdk*
 ```
 $ ls /dev/tty*
 ```
+###### If serial port is not opening then there is chance that the user is not added to the dialout group, and to add user to dialout group use the following command (this is optional, just in case you are not able to open the port)
+
+```
+$ sudo usermod -a -G dialout <username>
+```
+
 ###### Now we need to make sure that we have access to the port and for that we need to give the port acccess to read and write, and to achieve that us the following command. Where the asterick in " /dev/tty* " corresponds to USB or ACM which you can verify using the above command. 
 
 ```
@@ -66,7 +72,7 @@ $ python3 src/multi_motor/src/run.py
 # #########################################################################################################################################################################################
 
 
-###### Note: You can also eliminate retyping the "$ source devel/setup.bash" command, by adding it in the .bashrc file. To do so you need to follow the commands
+###### Note 1: You can also eliminate retyping the "$ source devel/setup.bash" command, by adding it in the .bashrc file. To do so you need to follow the commands
 ###### Open the .bashrc file. Since, I'm using vscode I will follow the following command
 
 ```
@@ -79,4 +85,5 @@ $ code ~/.bashrc
 source ~/KTH-Neuro-Computing-Systems/Multi_Motor/devel/setup.bash
 ```
 ###### Once, it is done you need to restart the terminal, and follow the procedure to run the scripts.
+
 
