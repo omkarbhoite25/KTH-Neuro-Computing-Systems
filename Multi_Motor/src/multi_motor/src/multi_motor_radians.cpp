@@ -55,7 +55,7 @@ bool getPresentPosition(multi_motor::GetPosition::Request &req,
 {
   uint8_t dxl_error = 0;
   int dxl_comm_result = COMM_TX_FAIL;
-  uint16_t pos = 0;
+  uint16_t pos =  0.0;
   dxl_comm_result = packetHandler->read2ByteTxRx(portHandler, (uint8_t)req.id, ADDR_PRESENT_POSITION, &pos, &dxl_error);
   ROS_INFO("getPosition : [ID:%d] -> [POSITION:%d]", req.id, pos);
   res.position = ((pos*0.088*M_PI)/180);
