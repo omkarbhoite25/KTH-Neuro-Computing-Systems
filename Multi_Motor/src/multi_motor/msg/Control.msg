@@ -1,4 +1,4 @@
 uint8 id
-uint16 position
+float64 position
 uint16 speed
 uint16 torque

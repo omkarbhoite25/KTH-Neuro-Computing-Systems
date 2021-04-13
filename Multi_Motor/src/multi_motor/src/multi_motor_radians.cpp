@@ -70,13 +70,14 @@ void talkToMotor(int id, const multi_motor::Control::ConstPtr &msg)
   ROS_INFO("Setting Position");
   uint8_t dxl_error = 0;
   uint16_t pos = ( float)msg->position;
-  pos = round(pos/0.088)*(180/M_PI);
+  pos = round((pos/0.088)*(180/M_PI));
   packetHandler->write2ByteTxRx(portHandler, id, ADDR_GOAL_POSITION, pos, &dxl_error);
 }
 
 void setPositionCallback1(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
+  posi = round((posi/0.088)*(180/M_PI));
   if (posi<1500)
   {
     uint8_t dxl_error = 0;
@@ -101,6 +102,7 @@ void setPositionCallback1(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback2(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
+  posi = round((posi/0.088)*(180/M_PI));
   if (posi<2000)
   {
     uint8_t dxl_error = 0;
@@ -125,6 +127,7 @@ void setPositionCallback2(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback3(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
+  posi = round((posi/0.088)*(180/M_PI));
   if (posi<1500)
   {
     uint8_t dxl_error = 0;
@@ -149,6 +152,7 @@ void setPositionCallback3(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback4(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
+  posi = round((posi/0.088)*(180/M_PI));
   if (posi<1500)
   {
     uint8_t dxl_error = 0;
@@ -173,6 +177,7 @@ void setPositionCallback4(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback5(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
+  posi = round((posi/0.088)*(180/M_PI));
   if (posi<1700)
   {
     uint8_t dxl_error = 0;
@@ -197,6 +202,7 @@ void setPositionCallback5(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback6(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
+  posi = round((posi/0.088)*(180/M_PI));
   if (posi<1700)
   {
     uint8_t dxl_error = 0;
