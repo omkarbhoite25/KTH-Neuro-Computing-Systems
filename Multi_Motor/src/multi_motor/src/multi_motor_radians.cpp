@@ -53,7 +53,12 @@ PacketHandler *packetHandler;
 bool getPresentPosition(multi_motor::GetPosition::Request &req,
                         multi_motor::GetPosition::Response &res)
 {
-  uint8_t dxl_error = 0;https://wiki.ros.org/ROS/Installation;
+  uint8_t dxl_error = 0;
+  int dxl_comm_result = COMM_TX_FAIL;
+  uint16_t pos =  0.0;
+  dxl_comm_result = packetHandler->read2ByteTxRx(portHandler, (uint8_t)req.id, ADDR_PRESENT_POSITION, &pos, &dxl_error);
+  ROS_INFO("getPosition : [ID:%d] -> [POSITION:%d]", req.id, pos);
+  res.position = (((pos*2*M_PI)/4095)-M_PI);
   return true;
   
 }
@@ -65,14 +70,14 @@ void talkToMotor(int id, const multi_motor::Control::ConstPtr &msg)
   ROS_INFO("Setting Position");
   uint8_t dxl_error = 0;
   uint16_t pos = ( float)msg->position;
-  pos = round((pos/0.088)*(180/M_PI));
+  pos = round((pos + M_PI)*(4095/(2*M_PI)));
   packetHandler->write2ByteTxRx(portHandler, id, ADDR_GOAL_POSITION, pos, &dxl_error);
 }
 
 void setPositionCallback1(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
-  posi = round((posi/0.088)*(180/M_PI));
+  posi = round((posi + M_PI)*(4095/(2*M_PI)));
   if (posi<1500)
   {
     uint8_t dxl_error = 0;
@@ -97,7 +102,7 @@ void setPositionCallback1(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback2(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
-  posi = round((posi/0.088)*(180/M_PI));
+  posi =  round((posi + M_PI)*(4095/(2*M_PI)));
   if (posi<2000)
   {
     uint8_t dxl_error = 0;
@@ -122,7 +127,7 @@ void setPositionCallback2(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback3(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
-  posi = round((posi/0.088)*(180/M_PI));
+  posi =  round((posi + M_PI)*(4095/(2*M_PI)));
   if (posi<1500)
   {
     uint8_t dxl_error = 0;
@@ -147,7 +152,7 @@ void setPositionCallback3(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback4(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
-  posi = round((posi/0.088)*(180/M_PI));
+  posi =  round((posi + M_PI)*(4095/(2*M_PI)));
   if (posi<1500)
   {
     uint8_t dxl_error = 0;
@@ -172,7 +177,7 @@ void setPositionCallback4(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback5(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
-  posi = round((posi/0.088)*(180/M_PI));
+  posi =  round((posi + M_PI)*(4095/(2*M_PI)));
   if (posi<1700)
   {
     uint8_t dxl_error = 0;
@@ -197,7 +202,7 @@ void setPositionCallback5(const multi_motor::Control::ConstPtr &msg)
 void setPositionCallback6(const multi_motor::Control::ConstPtr &msg)
 {
   uint16_t posi = ( float)msg->position;
-  posi = round((posi/0.088)*(180/M_PI));
+  posi =  round((posi + M_PI)*(4095/(2*M_PI)));
   if (posi<1700)
   {
     uint8_t dxl_error = 0;
@@ -324,12 +329,12 @@ int main(int argc, char **argv)
   enableTorque();
  
 // Create rostopics
-  ros::Subscriber set_position1_sub = nh.subscribe("/robot/RHM0_joint/cmd_pos", 10, setPositionCallback1);
-  ros::Subscriber set_position2_sub = nh.subscribe("/robot/SwingXAxis_joint/cmd_pos", 10, setPositionCallback2);
-  ros::Subscriber set_position3_sub = nh.subscribe("/robot/ArmLeftZAxis_joint/cmd_pos", 10, setPositionCallback3);
-  ros::Subscriber set_position4_sub = nh.subscribe("/robot/ArmRightZAxis_joint/cmd_pos", 10, setPositionCallback4);
-  ros::Subscriber set_position5_sub = nh.subscribe("/robot/CameraMountLeftXAxis_joint/cmd_pos", 10, setPositionCallback5);
-  ros::Subscriber set_position6_sub = nh.subscribe("/robot/CameraMountRightXAxis_joint/cmd_pos", 10, setPositionCallback6);
+  ros::Subscriber set_position1_sub = nh.subscribe("/head_lr", 10, setPositionCallback1);
+  ros::Subscriber set_position2_sub = nh.subscribe("/head_ud", 10, setPositionCallback2);
+  ros::Subscriber set_position3_sub = nh.subscribe("/reye_lr", 10, setPositionCallback3);
+  ros::Subscriber set_position4_sub = nh.subscribe("/leye_lr", 10, setPositionCallback4);
+  ros::Subscriber set_position5_sub = nh.subscribe("/reye_ud", 10, setPositionCallback5);
+  ros::Subscriber set_position6_sub = nh.subscribe("/leye_ud", 10, setPositionCallback6);
   ros::ServiceServer get_position_srv = nh.advertiseService("/get_position", getPresentPosition);
   ros::Subscriber set_speed_sub = nh.subscribe("/set_speed", 10, movingSpeed);
   ros::Subscriber led_sub = nh.subscribe("/led", 10, turnLEDonOff);
