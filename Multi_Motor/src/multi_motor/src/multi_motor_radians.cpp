@@ -53,12 +53,7 @@ PacketHandler *packetHandler;
 bool getPresentPosition(multi_motor::GetPosition::Request &req,
                         multi_motor::GetPosition::Response &res)
 {
-  uint8_t dxl_error = 0;
-  int dxl_comm_result = COMM_TX_FAIL;
-  uint16_t pos =  0.0;
-  dxl_comm_result = packetHandler->read2ByteTxRx(portHandler, (uint8_t)req.id, ADDR_PRESENT_POSITION, &pos, &dxl_error);
-  ROS_INFO("getPosition : [ID:%d] -> [POSITION:%d]", req.id, pos);
-  res.position = ((pos*0.088*M_PI)/180);
+  uint8_t dxl_error = 0;https://wiki.ros.org/ROS/Installation;
   return true;
   
 }
@@ -263,7 +258,7 @@ void setTorque (const multi_motor::Control::ConstPtr &msg)
 }
 
 // A function to communicate with motor
-void communiateWithMotor(int id, int add, int value)
+void communicateWithMotor(int id, int add, int value)
 {
   uint8_t dxl_error = 0;
   packetHandler = dynamixel::PacketHandler::getPacketHandler(PROTOCOL_VERSION);
@@ -276,32 +271,32 @@ void settingHeadToDefaultPosition()
 {
   
   // Lower the speed of motors to take safety into account
-  communiateWithMotor(DXL1_ID,ADDR_MOVING_SPEED,50);
-  communiateWithMotor(DXL2_ID,ADDR_MOVING_SPEED,50);
-  communiateWithMotor(DXL3_ID,ADDR_MOVING_SPEED,50);
-  communiateWithMotor(DXL4_ID,ADDR_MOVING_SPEED,50);
-  communiateWithMotor(DXL5_ID,ADDR_MOVING_SPEED,50);
-  communiateWithMotor(DXL6_ID,ADDR_MOVING_SPEED,50);
+  communicateWithMotor(DXL1_ID,ADDR_MOVING_SPEED,50);
+  communicateWithMotor(DXL2_ID,ADDR_MOVING_SPEED,50);
+  communicateWithMotor(DXL3_ID,ADDR_MOVING_SPEED,50);
+  communicateWithMotor(DXL4_ID,ADDR_MOVING_SPEED,50);
+  communicateWithMotor(DXL5_ID,ADDR_MOVING_SPEED,50);
+  communicateWithMotor(DXL6_ID,ADDR_MOVING_SPEED,50);
 
   // Moving the motors to default positions
-  communiateWithMotor(DXL1_ID,ADDR_GOAL_POSITION,2000);
-  communiateWithMotor(DXL2_ID,ADDR_GOAL_POSITION,2450);
-  communiateWithMotor(DXL3_ID,ADDR_GOAL_POSITION,2000);
-  communiateWithMotor(DXL4_ID,ADDR_GOAL_POSITION,2000);
-  communiateWithMotor(DXL5_ID,ADDR_GOAL_POSITION,2000);
-  communiateWithMotor(DXL6_ID,ADDR_GOAL_POSITION,2000);
+  communicateWithMotor(DXL1_ID,ADDR_GOAL_POSITION,2000);
+  communicateWithMotor(DXL2_ID,ADDR_GOAL_POSITION,2450);
+  communicateWithMotor(DXL3_ID,ADDR_GOAL_POSITION,2000);
+  communicateWithMotor(DXL4_ID,ADDR_GOAL_POSITION,2000);
+  communicateWithMotor(DXL5_ID,ADDR_GOAL_POSITION,2000);
+  communicateWithMotor(DXL6_ID,ADDR_GOAL_POSITION,2000);
 }
 
 
 // Function is use to enable torque for all the motors in the robotic head
 void enableTorque()
 {
-  communiateWithMotor(DXL1_ID,ADDR_TORQUE_ENABLE,1);
-  communiateWithMotor(DXL2_ID,ADDR_TORQUE_ENABLE,1);
-  communiateWithMotor(DXL3_ID,ADDR_TORQUE_ENABLE,1);
-  communiateWithMotor(DXL4_ID,ADDR_TORQUE_ENABLE,1);
-  communiateWithMotor(DXL5_ID,ADDR_TORQUE_ENABLE,1);
-  communiateWithMotor(DXL6_ID,ADDR_TORQUE_ENABLE,1);
+  communicateWithMotor(DXL1_ID,ADDR_TORQUE_ENABLE,1);
+  communicateWithMotor(DXL2_ID,ADDR_TORQUE_ENABLE,1);
+  communicateWithMotor(DXL3_ID,ADDR_TORQUE_ENABLE,1);
+  communicateWithMotor(DXL4_ID,ADDR_TORQUE_ENABLE,1);
+  communicateWithMotor(DXL5_ID,ADDR_TORQUE_ENABLE,1);
+  communicateWithMotor(DXL6_ID,ADDR_TORQUE_ENABLE,1);
 }
 
 // Main Function
@@ -329,12 +324,12 @@ int main(int argc, char **argv)
   enableTorque();
  
 // Create rostopics
-  ros::Subscriber set_position1_sub = nh.subscribe("/head_lr", 10, setPositionCallback1);
-  ros::Subscriber set_position2_sub = nh.subscribe("/head_ud", 10, setPositionCallback2);
-  ros::Subscriber set_position3_sub = nh.subscribe("/reye_lr", 10, setPositionCallback3);
-  ros::Subscriber set_position4_sub = nh.subscribe("/leye_lr", 10, setPositionCallback4);
-  ros::Subscriber set_position5_sub = nh.subscribe("/reye_ud", 10, setPositionCallback5);
-  ros::Subscriber set_position6_sub = nh.subscribe("/leye_ud", 10, setPositionCallback6);
+  ros::Subscriber set_position1_sub = nh.subscribe("/robot/RHM0_joint/cmd_pos", 10, setPositionCallback1);
+  ros::Subscriber set_position2_sub = nh.subscribe("/robot/SwingXAxis_joint/cmd_pos", 10, setPositionCallback2);
+  ros::Subscriber set_position3_sub = nh.subscribe("/robot/ArmLeftZAxis_joint/cmd_pos", 10, setPositionCallback3);
+  ros::Subscriber set_position4_sub = nh.subscribe("/robot/ArmRightZAxis_joint/cmd_pos", 10, setPositionCallback4);
+  ros::Subscriber set_position5_sub = nh.subscribe("/robot/CameraMountLeftXAxis_joint/cmd_pos", 10, setPositionCallback5);
+  ros::Subscriber set_position6_sub = nh.subscribe("/robot/CameraMountRightXAxis_joint/cmd_pos", 10, setPositionCallback6);
   ros::ServiceServer get_position_srv = nh.advertiseService("/get_position", getPresentPosition);
   ros::Subscriber set_speed_sub = nh.subscribe("/set_speed", 10, movingSpeed);
   ros::Subscriber led_sub = nh.subscribe("/led", 10, turnLEDonOff);

@@ -6,6 +6,10 @@
 
 # #########################################################################################################################################################################################
 
+#### Prerequisite
+
+###### ROS, and to install it please follow the instruction from this link "https://wiki.ros.org/ROS/Installation". "In my case I am  using  ROS Noetic"
+
 #### Steps to run the robotics head using ros topics and services.
 
 ###### [1]. Downlaod the Dynamixel SDK from https://github.com/ROBOTIS-GIT/DynamixelSDK.git and install the one for ros version. Or the shortest way to install library is by using the following command. (Make sure to put the correct ROS-DISTRO.)
@@ -91,5 +95,12 @@ $ code ~/.bashrc
 source ~/KTH-Neuro-Computing-Systems/Multi_Motor/devel/setup.bash
 ```
 ###### Once, it is done you need to restart the terminal, and follow the procedure to run the scripts.
+
+# #########################################################################################################################################################################################
+
+# #########################################################################################################################################################################################
+
+###### Note: The Multi_motor folder also contains a file name multi_motor_radians which uses radians as the input to change the motor position, where as the file multi_motor uses ticks to control and change the position of the motor.
+
 
 
