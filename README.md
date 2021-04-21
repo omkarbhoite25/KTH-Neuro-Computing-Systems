@@ -103,4 +103,19 @@ source ~/KTH-Neuro-Computing-Systems/Multi_Motor/devel/setup.bash
 ###### Note: The Multi_motor folder also contains a file name multi_motor_radians which uses radians as the input to change the motor position, where as the file multi_motor uses ticks to control and change the position of the motor.
 
 
+# Event Based Camera (eDVS4337)
+
+Install libserialport to access the camera, to do so execute the following command.
+
+```
+$ git clone git://sigrok.org/libserialport
+```
+
+```
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
 
