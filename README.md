@@ -119,16 +119,7 @@ $ sudo apt update
 $ sudo apt install libserialport-dev
 
 ```
-
+Give the pot the permission to open and read/write:
 ```
-$ git clone git://sigrok.org/libserialport
+$ sudo chmod 666 /dev/tty${USB/ACM}
 ```
-
-```
-$ ./autogen.sh
-$ ./configure
-$ make
-$ sudo make install
-```
-
-
