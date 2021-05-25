@@ -120,4 +120,15 @@ $ sudo apt install libserialport-dev
 
 ```
 
+```
+$ git clone git://sigrok.org/libserialport
+```
+
+```
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
 
