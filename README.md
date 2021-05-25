@@ -108,14 +108,16 @@ source ~/KTH-Neuro-Computing-Systems/Multi_Motor/devel/setup.bash
 Install libserialport to access the camera, to do so execute the following command.
 
 ```
-$ git clone git://sigrok.org/libserialport
+$ sudo add-apt-repository ppa:inivation-ppa/inivation
+$ sudo apt-get update
+$ sudo apt-get install libcaer-dev
 ```
 
 ```
-$ ./autogen.sh
-$ ./configure
-$ make
-$ sudo make install
+
+$ sudo apt update
+$ sudo apt install libserialport-dev
+
 ```
 
 
