@@ -103,23 +103,4 @@ source ~/KTH-Neuro-Computing-Systems/Multi_Motor/devel/setup.bash
 ###### Note: The Multi_motor folder also contains a file name multi_motor_radians which uses radians as the input to change the motor position, where as the file multi_motor uses ticks to control and change the position of the motor.
 
 
-# Event Based Camera (eDVS4337) -- Under Construction
 
-Install libserialport to access the camera, to do so execute the following command.
-
-```
-$ sudo add-apt-repository ppa:inivation-ppa/inivation
-$ sudo apt-get update
-$ sudo apt-get install libcaer-dev
-```
-
-```
-
-$ sudo apt update
-$ sudo apt install libserialport-dev
-
-```
-Give the pot the permission to open and read/write:
-```
-$ sudo chmod 666 /dev/tty${USB/ACM}
-```
