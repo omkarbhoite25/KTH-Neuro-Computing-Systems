@@ -1,0 +1,39 @@
+name: Publish Python Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install build tools
+      run: pip install build twine
+    - name: Build package
+      run: |
+        cd Multi_Motor/src/head_automation
+        cat > setup_pypi.py << 'PYEOF'
+        from setuptools import setup, find_packages
+        setup(
+            name='kth-head-automation',
+            version='0.1.0',
+            description='Automation library for KTH robotic head',
+            author='Omkar Bhoite',
+            packages=find_packages(where='src'),
+            package_dir={'': 'src'},
+            install_requires=['numpy', 'pyyaml'],
+            python_requires='>=3.8',
+        )
+        PYEOF
+        python setup_pypi.py sdist bdist_wheel
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: cd Multi_Motor/src/head_automation && twine upload dist/*
