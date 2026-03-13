@@ -1,0 +1,40 @@
+name: Python Package using Anaconda
+
+on:
+  push:
+    branches: [ main, development ]
+    paths: ['**/*.py', '**/sequences.yaml', '**/motor_limits.yaml']
+  pull_request:
+    branches: [ main ]
+    paths: ['**/*.py']
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Miniconda
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+        activate-environment: test
+        auto-activate-base: false
+    - name: Install dependencies
+      run: conda install -y numpy pyyaml && pip install pytest
+    - name: Python syntax check
+      run: |
+        python -m py_compile Multi_Motor/src/multi_motor/src/run.py
+        python -m py_compile motorControlPython/main.py
+        python -m py_compile motorControlPython/Servo_Control.py
+    - name: Run interpolation tests
+      run: cd Multi_Motor/src/head_automation && PYTHONPATH=src:$PYTHONPATH python -m pytest test/test_interpolation.py -v
+    - name: Run sequence validation tests
+      run: cd Multi_Motor/src/head_automation && PYTHONPATH=src:$PYTHONPATH python -m pytest test/test_sequences.py -v
+    - name: Run motor interface tests
+      run: cd Multi_Motor/src/head_automation && PYTHONPATH=src:$PYTHONPATH python -m pytest test/test_motor_interface.py -v
