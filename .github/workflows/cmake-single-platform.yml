@@ -1,6 +1,7 @@
 name: CMake Single-Platform (ROS Noetic)
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main, development ]
   pull_request:
