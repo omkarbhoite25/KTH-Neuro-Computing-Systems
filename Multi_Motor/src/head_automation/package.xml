@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>head_automation</name>
+  <version>0.1.0</version>
+  <description>Automation modes for the KTH robotic head: tracking, sequences, teleop, scanning</description>
+
+  <author email="omkarbhoite97@gmail.com">Omkar Bhoite</author>
+  <maintainer email="omkarbhoite97@gmail.com">Omkar Bhoite</maintainer>
+
+  <license>Apache 2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>multi_motor</depend>
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <!-- Optional: event camera package for tracking mode -->
+  <!-- <exec_depend>event_based_camera</exec_depend> -->
+</package>
