@@ -1,0 +1,5 @@
+# Keyboard teleop parameters
+step_size: 20           # ticks per keypress (adjustable with +/-)
+step_increment: 5       # how much +/- changes the step size
+min_step: 5
+max_step: 100
