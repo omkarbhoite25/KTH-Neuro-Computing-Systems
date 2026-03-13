@@ -1,6 +1,7 @@
 name: Python Package using Anaconda
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main, development ]
     paths: ['**/*.py', '**/sequences.yaml', '**/motor_limits.yaml']
