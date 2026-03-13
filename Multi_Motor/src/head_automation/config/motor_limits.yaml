@@ -1,0 +1,49 @@
+# Motor configuration -- single source of truth for all automation nodes
+# Positions are in MX-28 ticks (0-4095)
+motors:
+  head_lr:
+    id: 1
+    topic: /head_lr
+    min: 1500
+    max: 2500
+    default: 2000
+    description: "Head left-right"
+  head_ud:
+    id: 2
+    topic: /head_ud
+    min: 2000
+    max: 2900
+    default: 2450
+    description: "Head up-down"
+  reye_lr:
+    id: 3
+    topic: /reye_lr
+    min: 1500
+    max: 2500
+    default: 2000
+    description: "Right eye left-right"
+  leye_lr:
+    id: 4
+    topic: /leye_lr
+    min: 1500
+    max: 2500
+    default: 2000
+    description: "Left eye left-right"
+  reye_ud:
+    id: 5
+    topic: /reye_ud
+    min: 1700
+    max: 2300
+    default: 2000
+    description: "Right eye up-down"
+  leye_ud:
+    id: 6
+    topic: /leye_ud
+    min: 1700
+    max: 2300
+    default: 2000
+    description: "Left eye up-down"
+
+# Safety parameters
+max_step_head: 100   # Max position change per control cycle for head motors
+max_step_eye: 60     # Max position change per control cycle for eye motors
