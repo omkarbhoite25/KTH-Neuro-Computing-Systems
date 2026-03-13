@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(multi_motor)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+add_compile_options(-std=c++11 -Wall -Wextra)
 
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
@@ -47,27 +47,29 @@ catkin_package(
     roscpp
     std_msgs
     dynamixel_sdk
-#  DEPENDS system_lib
 )
 
 ################################################################################
 # Build
 ################################################################################
 ## Specify additional locations of header files
-## Your package locations should be listed before other locations
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+# Tick-based motor control node
 add_executable(multi_motor src/multi_motor.cpp)
 add_dependencies(multi_motor ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(multi_motor ${catkin_LIBRARIES})
 
+# Radian-based motor control node
+add_executable(multi_motor_radians src/multi_motor_radians.cpp)
+add_dependencies(multi_motor_radians ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(multi_motor_radians ${catkin_LIBRARIES})
+
 ################################################################################
 # Install
 ################################################################################
-## Mark executables for installation
-## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
-install(TARGETS multi_motor
+install(TARGETS multi_motor multi_motor_radians
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
