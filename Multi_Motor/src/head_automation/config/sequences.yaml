@@ -1,0 +1,82 @@
+# Pre-programmed motion sequences
+# Each keyframe: positions (motor_name: ticks), duration (seconds to reach this keyframe)
+# Partial keyframes supported -- unspecified motors hold their current position
+
+sequences:
+  look_around:
+    loop: false
+    keyframes:
+      - positions: {head_lr: 2000, head_ud: 2450}
+        duration: 0.5
+      - positions: {head_lr: 1600}
+        duration: 2.0
+      - positions: {head_lr: 2400}
+        duration: 3.0
+      - positions: {head_ud: 2100}
+        duration: 1.5
+      - positions: {head_ud: 2800}
+        duration: 2.0
+      - positions: {head_lr: 2000, head_ud: 2450}
+        duration: 2.0
+
+  nod_yes:
+    loop: false
+    keyframes:
+      - positions: {head_ud: 2450}
+        duration: 0.3
+      - positions: {head_ud: 2200}
+        duration: 0.4
+      - positions: {head_ud: 2650}
+        duration: 0.4
+      - positions: {head_ud: 2200}
+        duration: 0.4
+      - positions: {head_ud: 2650}
+        duration: 0.4
+      - positions: {head_ud: 2450}
+        duration: 0.3
+
+  shake_no:
+    loop: false
+    keyframes:
+      - positions: {head_lr: 2000}
+        duration: 0.3
+      - positions: {head_lr: 1750}
+        duration: 0.35
+      - positions: {head_lr: 2250}
+        duration: 0.35
+      - positions: {head_lr: 1750}
+        duration: 0.35
+      - positions: {head_lr: 2250}
+        duration: 0.35
+      - positions: {head_lr: 2000}
+        duration: 0.3
+
+  scan_room:
+    loop: true
+    keyframes:
+      - positions: {head_lr: 2000, head_ud: 2450}
+        duration: 1.0
+      - positions: {head_lr: 1600, head_ud: 2200}
+        duration: 3.0
+      - positions: {head_lr: 2400, head_ud: 2200}
+        duration: 4.0
+      - positions: {head_lr: 2400, head_ud: 2700}
+        duration: 2.0
+      - positions: {head_lr: 1600, head_ud: 2700}
+        duration: 4.0
+      - positions: {head_lr: 2000, head_ud: 2450}
+        duration: 3.0
+
+  curious_look:
+    loop: false
+    keyframes:
+      - positions: {head_lr: 2000, head_ud: 2450, reye_lr: 2000, leye_lr: 2000}
+        duration: 0.5
+      - positions: {head_lr: 1800, head_ud: 2300, reye_lr: 1800, leye_lr: 1800}
+        duration: 1.0
+      - positions: {head_ud: 2200}
+        duration: 0.5
+      - positions: {head_ud: 2400}
+        duration: 0.5
+      - positions: {head_lr: 2000, head_ud: 2450, reye_lr: 2000, leye_lr: 2000}
+        duration: 1.0
