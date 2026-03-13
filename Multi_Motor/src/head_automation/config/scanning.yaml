@@ -1,0 +1,10 @@
+# Scanning/patrol mode parameters
+control_rate: 50        # Hz
+# Lissajous pattern: different LR/UD frequencies for full room coverage
+lr_frequency: 0.1       # Hz -- head left-right oscillation
+ud_frequency: 0.07      # Hz -- head up-down oscillation (different for Lissajous)
+lr_amplitude: 400       # ticks -- half-range of LR sweep
+ud_amplitude: 300       # ticks -- half-range of UD sweep
+lr_center: 2000         # ticks -- center position for head_lr
+ud_center: 2450         # ticks -- center position for head_ud
+phase_offset: 1.5708    # radians (pi/2) -- phase between LR and UD
