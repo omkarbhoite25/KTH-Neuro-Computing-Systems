@@ -1,0 +1,24 @@
+name: C/C++ with Make
+
+on:
+  push:
+    branches: [ main, development ]
+    paths: ['**/*.cpp', '**/*.h', '**/*.c', '**/Makefile']
+  pull_request:
+    branches: [ main ]
+    paths: ['**/*.cpp', '**/*.h', '**/*.c', '**/Makefile']
+
+jobs:
+  build-c-accelerator:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build C accumulator library
+      run: cd Multi_Motor/src/head_automation/lib && make
+    - name: Verify shared library created
+      run: test -f Multi_Motor/src/head_automation/lib/libaccumulator.so
+    - name: Check for compiler warnings
+      run: |
+        cd Multi_Motor/src/head_automation/lib
+        make clean
+        gcc -Wall -Wextra -Werror -shared -fPIC -o libaccumulator.so accumulator.c -lm
