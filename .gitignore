@@ -1,5 +1,27 @@
-.vscode
-build/
-devel/
+# IDE
+.vscode/
+
+# Catkin build artifacts
+Multi_Motor/build/
+Multi_Motor/devel/
+Multi_Motor/logs/
+Single_Motor/build/
+Single_Motor/devel/
+Single_Motor/logs/
 .catkin_workspace
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+
+# C build artifacts
+*.o
+*.so
+*.a
+
+# Firebase
+firebase-debug.log
+
+# Project-specific
 Add.py
