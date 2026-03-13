@@ -1,0 +1,36 @@
+name: CMake Multi-Platform
+
+on:
+  push:
+    branches: [ main, development ]
+    paths: ['**/*.cpp', '**/*.h', '**/*.c', '**/CMakeLists.txt']
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04]
+        build_type: [Release, Debug]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install ROS Noetic (Ubuntu 20.04)
+      if: matrix.os == 'ubuntu-20.04'
+      run: |
+        sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu focal main" > /etc/apt/sources.list.d/ros-latest.list'
+        curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+        sudo apt-get update
+        sudo apt-get install -y ros-noetic-ros-base ros-noetic-dynamixel-sdk
+    - name: Build Multi_Motor (Ubuntu 20.04)
+      if: matrix.os == 'ubuntu-20.04'
+      run: |
+        source /opt/ros/noetic/setup.bash
+        cd Multi_Motor && catkin_make -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+    - name: Build Single_Motor (Ubuntu 20.04)
+      if: matrix.os == 'ubuntu-20.04'
+      run: |
+        source /opt/ros/noetic/setup.bash
+        cd Single_Motor && catkin_make -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
