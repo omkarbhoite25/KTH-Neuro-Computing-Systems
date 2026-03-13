@@ -1,0 +1,10 @@
+<!-- Standalone sequence player -->
+<launch>
+  <rosparam command="load" file="$(find head_automation)/config/motor_limits.yaml" ns="motor_limits" />
+
+  <node pkg="head_automation" type="mode_manager_node.py" name="mode_manager" output="screen" />
+
+  <node pkg="head_automation" type="sequence_player_node.py" name="sequence_player" output="screen">
+    <rosparam command="load" file="$(find head_automation)/config/sequences.yaml" subst_value="true" />
+  </node>
+</launch>

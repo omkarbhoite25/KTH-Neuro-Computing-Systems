@@ -1,0 +1,10 @@
+<!-- Standalone scanning mode -->
+<launch>
+  <rosparam command="load" file="$(find head_automation)/config/motor_limits.yaml" ns="motor_limits" />
+
+  <node pkg="head_automation" type="mode_manager_node.py" name="mode_manager" output="screen" />
+
+  <node pkg="head_automation" type="scanning_node.py" name="scanning_node" output="screen">
+    <rosparam command="load" file="$(find head_automation)/config/scanning.yaml" />
+  </node>
+</launch>

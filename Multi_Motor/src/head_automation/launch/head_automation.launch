@@ -1,0 +1,32 @@
+<!-- Full robotic head automation system -->
+<launch>
+  <!-- Load motor configuration -->
+  <rosparam command="load" file="$(find head_automation)/config/motor_limits.yaml" ns="motor_limits" />
+
+  <!-- Motor driver node (tick-based) -->
+  <node pkg="multi_motor" type="multi_motor" name="multi_motor_driver" output="screen" />
+
+  <!-- Mode manager (must start first) -->
+  <node pkg="head_automation" type="mode_manager_node.py" name="mode_manager" output="screen" />
+
+  <!-- Scanning mode -->
+  <node pkg="head_automation" type="scanning_node.py" name="scanning_node" output="screen">
+    <rosparam command="load" file="$(find head_automation)/config/scanning.yaml" />
+  </node>
+
+  <!-- Sequence player -->
+  <node pkg="head_automation" type="sequence_player_node.py" name="sequence_player" output="screen">
+    <rosparam command="load" file="$(find head_automation)/config/sequences.yaml" subst_value="true" />
+  </node>
+
+  <!-- Event camera tracking -->
+  <node pkg="head_automation" type="event_tracking_node.py" name="event_tracking" output="screen">
+    <rosparam command="load" file="$(find head_automation)/config/tracking.yaml" />
+  </node>
+
+  <!-- Keyboard teleop (in its own terminal) -->
+  <node pkg="head_automation" type="keyboard_teleop_node.py" name="keyboard_teleop"
+        output="screen" launch-prefix="xterm -e">
+    <rosparam command="load" file="$(find head_automation)/config/keyboard.yaml" />
+  </node>
+</launch>

@@ -1,0 +1,11 @@
+<!-- Standalone keyboard teleop -->
+<launch>
+  <rosparam command="load" file="$(find head_automation)/config/motor_limits.yaml" ns="motor_limits" />
+
+  <node pkg="head_automation" type="mode_manager_node.py" name="mode_manager" output="screen" />
+
+  <node pkg="head_automation" type="keyboard_teleop_node.py" name="keyboard_teleop"
+        output="screen" launch-prefix="xterm -e">
+    <rosparam command="load" file="$(find head_automation)/config/keyboard.yaml" />
+  </node>
+</launch>
