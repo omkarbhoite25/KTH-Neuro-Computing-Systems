@@ -81,7 +81,6 @@ rostopic pub -1 /head/mode_command head_automation/ModeCommand "{mode: idle, act
 - [:test_tube: Tests](#test_tube-tests)
 - [:wrench: Development](#wrench-development)
 - [:mag: Troubleshooting](#mag-troubleshooting)
-- [:busts_in_silhouette: Credits](#busts_in_silhouette-credits)
 
 ---
 
@@ -526,10 +525,3 @@ Multi_Motor/src/
 | :x: Tracking mode not moving | Ensure `dvs_msgs` package is installed (required, not optional) |
 | :x: Emergency stop stuck | Publish `rostopic pub -1 /head/emergency_stop std_msgs/Bool "data: false"` to clear |
 
----
-
-## :busts_in_silhouette: Credits
-
-- **Omkar Vilas Bhoite** — Development
-- **Prof. Jorg Conradt** — Advisor, KTH Neuro Computing Systems
-- **Juan Pablo Romero Bermudez** — Guidance
