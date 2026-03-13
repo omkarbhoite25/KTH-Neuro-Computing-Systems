@@ -1,0 +1,33 @@
+name: CMake Single-Platform (ROS Noetic)
+
+on:
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  catkin-build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install ROS Noetic
+      run: |
+        sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu focal main" > /etc/apt/sources.list.d/ros-latest.list'
+        curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+        sudo apt-get update
+        sudo apt-get install -y ros-noetic-ros-base ros-noetic-dynamixel-sdk python3-catkin-tools python3-rospy
+    - name: Build Multi_Motor
+      run: source /opt/ros/noetic/setup.bash && cd Multi_Motor && catkin_make -DCMAKE_CXX_FLAGS="-Wall -Wextra"
+    - name: Verify binaries
+      run: |
+        test -f Multi_Motor/devel/lib/multi_motor/multi_motor
+        test -f Multi_Motor/devel/lib/multi_motor/multi_motor_radians
+    - name: Build Single_Motor
+      run: source /opt/ros/noetic/setup.bash && cd Single_Motor && catkin_make -DCMAKE_CXX_FLAGS="-Wall -Wextra"
+    - name: Check topic name consistency
+      run: |
+        for topic in head_lr head_ud reye_lr leye_lr reye_ud leye_ud; do
+          grep -q "/$topic" Multi_Motor/src/multi_motor/src/motor_common.h
+          grep -q "/$topic" Multi_Motor/src/head_automation/config/motor_limits.yaml
+        done
