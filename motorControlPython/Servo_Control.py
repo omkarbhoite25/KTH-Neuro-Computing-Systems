@@ -37,7 +37,8 @@ start function
 
 def start():
     motor_run, motor_run_error = packetHandler.write2ByteTxRx(portHandler, MOTOR_ID, ADDRESS_MX_28_GOAL_POSITION, 0)
-    return motor_run, motor_run_error, print()
+    print()
+    return motor_run, motor_run_error
 
 '''
 stop function
@@ -56,7 +57,8 @@ input_position function
 '''
 def input_position(Position):
     motor_run, motor_run_error = packetHandler.write2ByteTxRx(portHandler, MOTOR_ID, ADDRESS_MX_28_GOAL_POSITION, Position)
-    return motor_run, motor_run_error, print('Position',Position)
+    print('Position', Position)
+    return motor_run, motor_run_error
 
 '''
 gui_input function
@@ -114,7 +116,7 @@ def gui_torque_input():
 
 
 ##############################################################################################################################################
-if __name__=="main":
+if __name__ == "__main__":
     ping()
     start()
     stop()
