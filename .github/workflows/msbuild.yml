@@ -1,0 +1,29 @@
+name: MSBuild
+
+on:
+  push:
+    branches: [ main, development ]
+    paths: ['**/*.cpp', '**/*.h', '**/*.c']
+  pull_request:
+    branches: [ main ]
+    paths: ['**/*.cpp', '**/*.h', '**/*.c']
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v2
+    - name: Validate source file structure
+      shell: powershell
+      run: |
+        $cppFiles = Get-ChildItem -Recurse -Include *.cpp,*.h,*.c -Exclude build*,devel*
+        Write-Host "Found $($cppFiles.Count) C/C++ source files"
+        if ($cppFiles.Count -eq 0) { throw "No C/C++ files found!" }
+    - name: Check for absolute Linux paths in includes
+      shell: powershell
+      run: |
+        $bad = Select-String -Path (Get-ChildItem -Recurse -Include *.cpp,*.h -Exclude build*,devel*) -Pattern '#include\s*</opt/'
+        if ($bad) { Write-Host "WARNING: absolute Linux paths found:"; $bad | ForEach-Object { Write-Host "  $($_.Filename):$($_.LineNumber)" } }
+        else { Write-Host "No absolute path includes (good)" }
