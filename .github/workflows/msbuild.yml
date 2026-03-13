@@ -1,6 +1,7 @@
 name: MSBuild
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main, development ]
     paths: ['**/*.cpp', '**/*.h', '**/*.c']
