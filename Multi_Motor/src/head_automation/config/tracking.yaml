@@ -1,0 +1,10 @@
+# Event camera tracking parameters
+control_rate: 30        # Hz -- control loop frequency
+decay_tau: 0.3          # seconds -- exponential decay time constant for accumulator
+kp_head: 3.0            # Proportional gain for head servo control
+kp_eye: 1.5             # Proportional gain for eye servo control
+fine_threshold: 20      # pixels -- below this, use eye servos instead of head
+max_step_head: 80       # ticks -- max head movement per control cycle
+max_step_eye: 40        # ticks -- max eye movement per control cycle
+image_width: 128        # eDVS resolution
+image_height: 128
